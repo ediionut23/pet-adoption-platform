@@ -1,0 +1,19 @@
+# Credentials & Secrets
+wallet/
+*.wallet/
+*.rar
+*.zip
+*.p12
+*.sso
+*.jks
+*.key
+*.pem
+.env
+
+# OS & Editor
+.DS_Store
+.DS_Store?
+.idea/
+.vscode/
+*.log
+*.tmp

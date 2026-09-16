@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet News - Pow</title>
+  <link rel="stylesheet" href="news.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo">Pow</div>
+    <a href="profile.html" class="profile-icon">
+      <img src="images/profileicon.png" alt="Profile">
+    </a>
+  </header>
+
+  <section class="news-header">
+    <h1 class="news-title">Latest Pet News</h1>
+  </section>
+
+  <section class="news-cards">
+    <div class="news-card">
+      <img src="images/news.jpg" alt="Pet news 1">
+      <h2>New Animal Shelter Opens Downtown</h2>
+      <p>A new shelter has opened with space for over 100 animals. Local volunteers are welcome!</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="news-card">
+      <img src="images/news.jpg" alt="Pet news 2">
+      <h2>Pet Adoption Rates on the Rise</h2>
+      <p>More people are choosing to adopt pets rather than shop. Here's why that's a good thing.</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="news-card">
+      <img src="images/news.jpg" alt="Pet news 3">
+      <h2>5 Tips for First-Time Pet Owners</h2>
+      <p>Thinking of adopting? Here are 5 tips to make your transition smooth and joyful.</p>
+      <a href="#">Read more</a>
+    </div>
+  </section>
+
+  <section class="rss-section">
+    <h2 class="rss-title">Latest Pet News from Around the Web</h2>
+    <div id="rss-feed" class="rss-container"></div>
+  </section>
+
+  <script>
+    async function fetchRssFeed() {
+      try {
+        const response = await fetch('/api/rss-feed');
+        const items = await response.json();
+        
+        const feedContainer = document.getElementById('rss-feed');
+        items.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'rss-item';
+          itemElement.innerHTML = `
+            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+            <div class="meta">
+              ${item.author ? `By ${item.author} | ` : ''}
+              ${new Date(item.date).toLocaleDateString()}
+            </div>
+            <div class="description">${item.description}</div>
+          `;
+          feedContainer.appendChild(itemElement);
+        });
+      } catch (error) {
+        console.error('Error fetching RSS feed:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchRssFeed);
+  </script>
+</body>
+</html>

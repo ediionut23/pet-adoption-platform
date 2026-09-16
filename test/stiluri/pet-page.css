@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body, html {
+    background-color: #EBE3CC;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+}
+
+.logo {
+    color: #224453;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+
+.profile-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pet-banner {
+    background-color: #ED5C01;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.pet-banner h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pet-photos {
+    padding: 30px 20px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pet-photo {
+    width: 318px;
+    height: 292px;
+    border-radius: 15px;
+}
+
+.pet-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.description h2 {
+    color: #ED5C01;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.info-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.info-section h2 {
+    color: #224453;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ED5C01;
+}
+
+.info-section p {
+    color: #224453;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.profile-summary {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #ED5C01;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ED5C01;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #224453;
+}
+
+.profile-row .label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.profile-row .value {
+    text-align: right;
+    max-width: 60%;
+    font-size: 1.1rem;
+    color: #224453;
+}
+
+.owner-description {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.owner-description-content {
+    flex: 1;
+}
+
+.owner-description-content h2 {
+    color: #ED5C01;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ED5C01;
+}
+
+.owner-description-content p {
+    color: #224453;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.adopt-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 200px;
+    align-self: flex-end;
+}
+
+.cat-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.adopt-btn {
+    background-color: #ED5C01;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+}
+
+.adopt-btn:hover {
+    background-color: #d44e01;
+}
+
+.message-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #224453;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-btn:hover {
+    background-color: #1a3440;
+}
+
+.location {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.location h2 {
+    color: #224453;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    background-color: #ff5a00;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: #e65100;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .photo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .owner-description {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .adopt-section {
+        order: -1;
+    }
+    
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-item .value {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .pet-info, .health-profile, .current-owner, .location {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

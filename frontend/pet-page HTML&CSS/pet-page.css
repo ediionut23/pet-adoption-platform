@@ -1,0 +1,240 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #EBE3CC;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+}
+
+.logo {
+    color: #224453;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 30px;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding-top: 30px;
+}
+
+.pet-banner {
+    background-color: #ED5C01;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.pet-banner h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pet-photos {
+    padding: 30px 20px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pet-photo {
+    width: 318px;
+    height: 292px;
+    border-radius: 15px;
+}
+
+.pet-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.description h2{
+    color:#ED5C01;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h2 {
+    color: #224453;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.info-section p {
+    color: #224453;
+}
+
+.profile-summary {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #ED5C01;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #737373;
+    color: #224453;
+}
+
+.profile-row .label {
+    font-weight: 500;
+}
+
+.profile-row .value {
+    text-align: right;
+    max-width: 60%;
+}
+
+.owner-description {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.owner-description-content {
+    flex: 1;
+}
+
+.owner-description-content h2 {
+    color: #ED5C01;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.owner-description-content p {
+    color: #224453;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.adopt-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 200px;
+    align-self: flex-end;
+}
+
+.cat-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.adopt-btn {
+    background-color: #ED5C01;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+}
+
+.adopt-btn:hover {
+    background-color: #d44e01;
+}
+
+.location {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.location h2 {
+    color: #224453;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .photo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .owner-description {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .adopt-section {
+        order: -1;
+    }
+    
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-item .value {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .pet-info, .health-profile, .current-owner, .location {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

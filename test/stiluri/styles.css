@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #f3e9ce;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-right: 35vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spațiere mărită între elemente */
+  z-index: 2;
+  width: 30vw;
+  max-width: 400px;
+  min-width: 250px;
+}
+
+.login-box h1 {
+  font-size: 3rem;
+  color: #12303b;
+  margin-bottom: 10px; /* Spațiu extra după titlu */
+}
+
+.input-field {
+  padding: 16px; /* Padding mărit pentru înălțime consistentă */
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%; /* Asigură că inputurile au aceeași lățime ca butonul */
+  box-sizing: border-box; /* Include padding în lățimea totală */
+}
+
+.login-button {
+  padding: 18px 25px; /* Padding ajustat să se potrivească cu inputurile */
+  background-color: #12303b;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box; /* Include padding în lățimea totală */
+  margin-top: 5px; /* Spațiu extra înainte de buton */
+
+}
+.login-button:hover {
+  background-color: #ff5a00;
+}
+
+.signup-text {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 5px; /* Spațiu extra după buton */
+
+}
+
+
+.signup-text a {
+  color: #ff5a00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+}
+.signup-text a:hover {
+  color: #12303b;
+}
+/* Cerc portocaliu */
+.circle {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background-color: #ff5a00;
+  top: -20%;
+  right: -150px;
+  z-index: 0;
+  box-shadow: 0 0 10px 35px #ff5a00;
+}
+
+/* Imaginea pisicii */
+.cat-image {
+  position: absolute;
+  width: 35vw;
+  height: auto;
+  transform: rotate(-90deg);
+  top: 20%;
+  right: -8%;
+  z-index: 1;
+}
+
+/* Media Queries pentru dispozitive mai mici */
+@media (max-width: 768px) {
+  .login-container {
+    padding-right: 10vw;
+  }
+
+  .login-box {
+    width: 80vw;
+    max-width: 100%;
+    min-width: unset;
+    gap: 22px; /* Spațiere ajustată pentru tableta */
+  }
+
+  .login-box h1 {
+    font-size: 2.5rem;
+  }
+
+  .input-field {
+    padding: 15px; /* Padding ajustat pentru tableta */
+  }
+
+  .login-button {
+    padding: 15px 25px; /* Padding consistent cu inputurile */
+    font-size: 1.2rem;
+  }
+
+  .signup-text {
+    font-size: 1rem;
+  }
+
+  /* Ajustează cercul portocaliu pentru telefoane mici */
+  .circle {
+    width: 40vw;
+    height: 40vw;
+    top: -10%;
+    right: -80px;
+  }
+
+  /* Imaginea pisicii în colțul din dreapta jos */
+  .cat-image {
+    width: 40vw;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(0deg); /* Nici o rotație pe ecrane mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 82vw;
+    gap: 20px; /* Spațiere ajustată pentru telefoane mici */
+  }
+
+  .login-box h1 {
+    font-size: 2rem;
+  }
+
+  .input-field {
+    padding: 12px; /* Padding ajustat pentru telefoane mici */
+  }
+
+  .login-button {
+    padding: 12px 20px; /* Padding consistent cu inputurile */
+    font-size: 1.1rem;
+  }
+
+  /* Ajustează cercul portocaliu pentru telefoane foarte mici */
+  .circle {
+    width: 35vw;
+    height: 35vw;
+    top: -5%;
+    right: -60px;
+  }
+
+  /* Imaginea pisicii în colțul din dreapta jos pe telefoane mici */
+  .cat-image {
+    width: 45vw;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  z-index: 1000;
+  animation: slideIn 0.5s ease-out;
+}
+
+.popup.error {
+  background-color: #e74c3c;
+}
+
+.popup.success {
+  background-color: #2ecc71;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.popup.show {
+  display: block;
+}
+
+/* Loading spinner styles */
+.login-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.login-button.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Error message styles */
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Notification styles */
+.notifications-icon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notifications-icon img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ffc107;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.notifications-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.notifications-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+    flex: 1;
+}
+
+.logo {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5a00;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.back-btn {
+    background-color: #ff5a00;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background-color: #e65100;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.notification-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.notification-card:hover {
+    transform: translateY(-2px);
+}
+
+.notification-card.unread {
+    border-left: 4px solid #ffc107;
+}
+
+.pet-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-message {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.notification-date {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.notification-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.mark-read-btn {
+    background: none;
+    border: none;
+    color: #ffc107;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.mark-read-btn:hover {
+    text-decoration: underline;
+}
+
+.mark-all-read {
+    background: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.mark-all-read:hover {
+    background: #e5ac00;
+}
+
+.no-notifications {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
